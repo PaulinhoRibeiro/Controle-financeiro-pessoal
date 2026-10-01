@@ -40,7 +40,7 @@
             gap: 16px;
             padding-bottom: 16px;
             border-bottom: 2px solid #f0f2f5;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .header h1 {
             font-size: 26px;
@@ -82,6 +82,54 @@
             background: #fce8e6;
         }
 
+        /* ===== MONTH BAR ===== */
+        .month-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #eef3fc, #f8faff);
+            border: 1px solid #d6e2f0;
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .month-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #4a5a72;
+        }
+        .month-info i {
+            color: #2a7de1;
+            font-size: 18px;
+        }
+        .month-info strong {
+            color: #1a2634;
+            font-size: 16px;
+        }
+        .btn-fechar-mes {
+            background: #fff;
+            border: 1px solid #d6e2f0;
+            color: #4a5a72;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-fechar-mes:hover {
+            background: #e67e22;
+            color: #fff;
+            border-color: #e67e22;
+        }
+
         /* ===== TABS ===== */
         .tabs {
             display: flex;
@@ -106,26 +154,14 @@
             gap: 8px;
             position: relative;
         }
-        .tab-btn i {
-            font-size: 18px;
-        }
-        .tab-btn:hover {
-            background: #f0f4fe;
-            color: #1a2634;
-        }
-        .tab-btn.active {
-            color: #1a2634;
-            background: #f0f4fe;
-        }
+        .tab-btn i { font-size: 18px; }
+        .tab-btn:hover { background: #f0f4fe; color: #1a2634; }
+        .tab-btn.active { color: #1a2634; background: #f0f4fe; }
         .tab-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -2px;
-            left: 20%;
-            width: 60%;
-            height: 4px;
-            background: #2a7de1;
-            border-radius: 4px;
+            bottom: -2px; left: 20%; width: 60%; height: 4px;
+            background: #2a7de1; border-radius: 4px;
         }
         .tab-btn.lava { color: #2a7de1; }
         .tab-btn.lava.active { color: #1a5bb5; }
@@ -135,24 +171,16 @@
         .tab-btn.uber.active { color: #c96a1a; }
         .tab-btn.resumo { color: #8e44ad; }
         .tab-btn.resumo.active { color: #6c3483; }
+        .tab-btn.historico { color: #16a085; }
+        .tab-btn.historico.active { color: #0e6b59; }
+        .tab-btn.historico.active::after { background: #16a085; }
 
         /* ===== TAB CONTENT ===== */
-        .tab-content {
-            display: none;
-            animation: fadeUp 0.35s ease;
-        }
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content { display: none; animation: fadeUp 0.35s ease; }
+        .tab-content.active { display: block; }
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ===== SALDO CARD ===== */
@@ -167,45 +195,19 @@
             margin-bottom: 28px;
             border: 1px solid #e0e8f2;
         }
-        .saldo-item {
-            display: flex;
-            flex-direction: column;
-        }
+        .saldo-item { display: flex; flex-direction: column; }
         .saldo-item .label {
-            font-size: 14px;
-            color: #6b7a8f;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            font-size: 14px; color: #6b7a8f; font-weight: 500; letter-spacing: 0.3px;
         }
-        .saldo-item .value {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a2634;
-        }
-        .saldo-item .value.positive {
-            color: #2e9b5e;
-        }
-        .saldo-item .value.negative {
-            color: #d1453b;
-        }
-        .saldo-detalhes {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+        .saldo-item .value { font-size: 28px; font-weight: 700; color: #1a2634; }
+        .saldo-item .value.positive { color: #2e9b5e; }
+        .saldo-item .value.negative { color: #d1453b; }
+        .saldo-detalhes { display: flex; gap: 30px; flex-wrap: wrap; }
         .saldo-detalhes .detalhe {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 15px;
-            font-weight: 500;
+            display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 500;
         }
-        .saldo-detalhes .detalhe.entrada {
-            color: #2e9b5e;
-        }
-        .saldo-detalhes .detalhe.saida {
-            color: #d1453b;
-        }
+        .saldo-detalhes .detalhe.entrada { color: #2e9b5e; }
+        .saldo-detalhes .detalhe.saida { color: #d1453b; }
 
         /* ===== FORM ===== */
         .form-transacao {
@@ -219,21 +221,12 @@
             align-items: flex-end;
             gap: 14px;
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            flex: 1 1 140px;
-            min-width: 120px;
-        }
+        .form-group { display: flex; flex-direction: column; flex: 1 1 140px; min-width: 120px; }
         .form-group label {
-            font-size: 12px;
-            font-weight: 600;
-            color: #4a5a72;
-            margin-bottom: 4px;
-            letter-spacing: 0.3px;
+            font-size: 12px; font-weight: 600; color: #4a5a72;
+            margin-bottom: 4px; letter-spacing: 0.3px;
         }
-        .form-group input,
-        .form-group select {
+        .form-group input, .form-group select {
             padding: 10px 12px;
             border: 1px solid #dce2ec;
             border-radius: 10px;
@@ -242,17 +235,9 @@
             transition: 0.2s;
             outline: none;
         }
-        .form-group input:focus,
-        .form-group select:focus {
+        .form-group input:focus, .form-group select:focus {
             border-color: #2a7de1;
             box-shadow: 0 0 0 3px rgba(42, 125, 225, 0.15);
-        }
-        .form-group .input-outro {
-            margin-top: 4px;
-            display: none;
-        }
-        .form-group .input-outro.visible {
-            display: block;
         }
         .btn-add {
             background: #2a7de1;
@@ -270,27 +255,14 @@
             height: 44px;
             white-space: nowrap;
         }
-        .btn-add:hover {
-            background: #1a5bb5;
-            transform: scale(1.02);
-        }
+        .btn-add:hover { background: #1a5bb5; transform: scale(1.02); }
 
         /* ===== FILTROS ===== */
         .filtros {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 18px;
-            align-items: center;
+            display: flex; flex-wrap: wrap; gap: 12px;
+            margin-bottom: 18px; align-items: center;
         }
-        .filtros input[type="date"] {
-            padding: 8px 12px;
-            border: 1px solid #dce2ec;
-            border-radius: 10px;
-            font-size: 13px;
-            background: #fff;
-        }
-        .filtros select {
+        .filtros input[type="date"], .filtros select {
             padding: 8px 12px;
             border: 1px solid #dce2ec;
             border-radius: 10px;
@@ -298,17 +270,10 @@
             background: #fff;
         }
         .filtros .btn-limpar {
-            background: transparent;
-            border: none;
-            color: #6b7a8f;
-            font-size: 13px;
-            cursor: pointer;
-            padding: 6px 14px;
-            border-radius: 20px;
+            background: transparent; border: none; color: #6b7a8f;
+            font-size: 13px; cursor: pointer; padding: 6px 14px; border-radius: 20px;
         }
-        .filtros .btn-limpar:hover {
-            background: #f0f2f5;
-        }
+        .filtros .btn-limpar:hover { background: #f0f2f5; }
 
         /* ===== LISTA ===== */
         .lista-transacoes {
@@ -337,52 +302,26 @@
             transition: 0.15s;
             font-size: 14px;
         }
-        .lista-item:hover {
-            background: #f8faff;
-        }
-        .lista-item:last-child {
-            border-bottom: none;
-        }
+        .lista-item:hover { background: #f8faff; }
+        .lista-item:last-child { border-bottom: none; }
         .lista-item .tipo-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 12px;
-            font-weight: 600;
+            display: inline-block; padding: 4px 12px; border-radius: 40px;
+            font-size: 12px; font-weight: 600;
         }
-        .tipo-badge.entrada {
-            background: #e1f3e8;
-            color: #1e7a46;
-        }
-        .tipo-badge.saida {
-            background: #fce8e6;
-            color: #b33a30;
-        }
+        .tipo-badge.entrada { background: #e1f3e8; color: #1e7a46; }
+        .tipo-badge.saida { background: #fce8e6; color: #b33a30; }
         .lista-item .categoria-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 40px;
-            font-size: 12px;
-            background: #eef1f5;
-            color: #4a5a72;
+            display: inline-block; padding: 4px 10px; border-radius: 40px;
+            font-size: 12px; background: #eef1f5; color: #4a5a72;
         }
         .lista-item .btn-del {
-            background: transparent;
-            border: none;
-            color: #b0bccd;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.2s;
-            padding: 4px;
+            background: transparent; border: none; color: #b0bccd;
+            cursor: pointer; font-size: 16px; transition: 0.2s; padding: 4px;
         }
-        .lista-item .btn-del:hover {
-            color: #d1453b;
-        }
+        .lista-item .btn-del:hover { color: #d1453b; }
         .empty-msg {
-            padding: 40px 20px;
-            text-align: center;
-            color: #8a9ab0;
-            font-size: 15px;
+            padding: 40px 20px; text-align: center;
+            color: #8a9ab0; font-size: 15px;
         }
 
         /* ===== RESUMO GERAL ===== */
@@ -399,36 +338,18 @@
             padding: 20px 22px;
         }
         .resumo-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a2634;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 16px; font-weight: 600; color: #1a2634;
+            margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
         }
         .resumo-card .resumo-linha {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f2f5;
-            font-size: 14px;
+            display: flex; justify-content: space-between;
+            padding: 8px 0; border-bottom: 1px solid #f0f2f5; font-size: 14px;
         }
-        .resumo-card .resumo-linha:last-child {
-            border-bottom: none;
-        }
-        .resumo-card .resumo-linha .label {
-            color: #4a5a72;
-        }
-        .resumo-card .resumo-linha .valor {
-            font-weight: 600;
-        }
-        .resumo-card .resumo-linha .valor.positive {
-            color: #2e9b5e;
-        }
-        .resumo-card .resumo-linha .valor.negative {
-            color: #d1453b;
-        }
+        .resumo-card .resumo-linha:last-child { border-bottom: none; }
+        .resumo-card .resumo-linha .label { color: #4a5a72; }
+        .resumo-card .resumo-linha .valor { font-weight: 600; }
+        .resumo-card .resumo-linha .valor.positive { color: #2e9b5e; }
+        .resumo-card .resumo-linha .valor.negative { color: #d1453b; }
         .resumo-total-geral {
             background: linear-gradient(135deg, #eef3fc, #f8faff);
             border: 2px solid #d6e2f0;
@@ -438,119 +359,153 @@
             margin-bottom: 28px;
         }
         .resumo-total-geral .label {
-            font-size: 16px;
+            font-size: 16px; color: #4a5a72; font-weight: 500;
+        }
+        .resumo-total-geral .value {
+            font-size: 40px; font-weight: 700; color: #1a2634;
+        }
+        .resumo-total-geral .value.positive { color: #2e9b5e; }
+        .resumo-total-geral .value.negative { color: #d1453b; }
+        .grafico-container {
+            margin-top: 16px; display: flex; justify-content: center;
+        }
+        .grafico-container canvas {
+            max-width: 100%; max-height: 200px; border-radius: 12px;
+        }
+
+        /* ===== HISTÓRICO ===== */
+        .historico-header {
+            background: #fafcff;
+            border: 1px solid #e6ecf5;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .historico-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a2634;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .historico-header h2 i { color: #16a085; }
+        .historico-controles {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .historico-controles label {
+            font-size: 14px;
             color: #4a5a72;
             font-weight: 500;
         }
-        .resumo-total-geral .value {
-            font-size: 40px;
-            font-weight: 700;
-            color: #1a2634;
+        .historico-controles select {
+            padding: 8px 12px;
+            border: 1px solid #dce2ec;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #fff;
+            min-width: 180px;
+            cursor: pointer;
         }
-        .resumo-total-geral .value.positive {
-            color: #2e9b5e;
-        }
-        .resumo-total-geral .value.negative {
+        .historico-controles .btn-del-mes {
+            background: #fce8e6;
+            border: none;
             color: #d1453b;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .historico-controles .btn-del-mes:hover { background: #f9d5d2; }
+        .historico-controles .btn-del-mes:disabled {
+            opacity: 0.5; cursor: not-allowed;
+        }
+        .historico-badge-info {
+            background: #e8f5f1;
+            color: #0e6b59;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .grafico-container {
-            margin-top: 16px;
-            display: flex;
-            justify-content: center;
-        }
-        .grafico-container canvas {
-            max-width: 100%;
-            max-height: 200px;
+        /* ===== SCROLL ===== */
+        .lista-scroll { max-height: 420px; overflow-y: auto; }
+        .lista-scroll::-webkit-scrollbar { width: 6px; }
+        .lista-scroll::-webkit-scrollbar-track { background: #eef1f5; }
+        .lista-scroll::-webkit-scrollbar-thumb { background: #c8d2e0; border-radius: 8px; }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 14px 22px;
             border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.35s ease;
+            z-index: 9999;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            max-width: 360px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast-info { background: #2a7de1; }
+        .toast-success { background: #2e9b5e; }
+        .toast-warning { background: #e67e22; }
+        .toast-error { background: #d1453b; }
 
         /* ===== RESPONSIVO ===== */
         @media (max-width: 768px) {
-            .app {
-                padding: 16px;
-            }
-            .header h1 {
-                font-size: 20px;
-            }
-            .tab-btn {
-                padding: 10px 14px;
-                font-size: 14px;
-            }
-            .form-transacao {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .form-group {
-                flex: 1 1 auto;
-                min-width: auto;
-            }
-            .btn-add {
-                width: 100%;
-                justify-content: center;
-            }
-            .lista-header,
-            .lista-item {
+            .app { padding: 16px; }
+            .header h1 { font-size: 20px; }
+            .tab-btn { padding: 10px 14px; font-size: 14px; }
+            .form-transacao { flex-direction: column; align-items: stretch; }
+            .form-group { flex: 1 1 auto; min-width: auto; }
+            .btn-add { width: 100%; justify-content: center; }
+            .lista-header, .lista-item {
                 grid-template-columns: 1.5fr 1fr 1fr 0.8fr 0.4fr;
                 font-size: 12px;
                 padding: 10px 14px;
             }
-            .saldo-card {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            .saldo-detalhes {
-                gap: 16px;
-            }
-            .resumo-grid {
-                grid-template-columns: 1fr;
-            }
-            .resumo-total-geral .value {
-                font-size: 30px;
-            }
+            .saldo-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .saldo-detalhes { gap: 16px; }
+            .resumo-grid { grid-template-columns: 1fr; }
+            .resumo-total-geral .value { font-size: 30px; }
+            .month-bar { flex-direction: column; align-items: stretch; }
+            .btn-fechar-mes { justify-content: center; }
+            .historico-header { flex-direction: column; align-items: stretch; }
+            .historico-controles { flex-direction: column; align-items: stretch; }
+            .historico-controles select { width: 100%; }
         }
         @media (max-width: 480px) {
-            .lista-header,
-            .lista-item {
-                grid-template-columns: 1fr 1fr 0.8fr 0.4fr;
-                gap: 4px;
+            .lista-header, .lista-item {
+                grid-template-columns: 1fr 1fr 0.8fr 0.4fr; gap: 4px;
             }
             .lista-header .categoria-col,
-            .lista-item .categoria-badge {
-                display: none;
-            }
-        }
-
-        /* ===== SCROLL ===== */
-        .lista-scroll {
-            max-height: 420px;
-            overflow-y: auto;
-        }
-        .lista-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .lista-scroll::-webkit-scrollbar-track {
-            background: #eef1f5;
-        }
-        .lista-scroll::-webkit-scrollbar-thumb {
-            background: #c8d2e0;
-            border-radius: 8px;
-        }
-
-        /* ===== OUTROS ===== */
-        .text-center {
-            text-align: center;
-        }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .gap-4 {
-            gap: 4px;
-        }
-        .flex {
-            display: flex;
-            align-items: center;
+            .lista-item .categoria-badge { display: none; }
         }
     </style>
 </head>
@@ -563,9 +518,20 @@
             <div class="header-actions">
                 <button onclick="exportarDados()"><i class="fas fa-download"></i> Exportar</button>
                 <button onclick="importarDados()"><i class="fas fa-upload"></i> Importar</button>
-                <button class="btn-danger" onclick="if(confirm('Tem certeza? Isso apagará TODOS os dados.')) limparTudo()"><i class="fas fa-trash-alt"></i> Limpar tudo</button>
+                <button class="btn-danger" onclick="if(confirm('Tem certeza? Isso apagará TODOS os dados do mês atual E o histórico.')) limparTudo()"><i class="fas fa-trash-alt"></i> Limpar tudo</button>
             </div>
         </header>
+
+        <!-- MONTH BAR -->
+        <div class="month-bar">
+            <div class="month-info">
+                <i class="fas fa-calendar-check"></i>
+                Mês atual: <strong id="current-month-label">—</strong>
+            </div>
+            <button class="btn-fechar-mes" onclick="fecharMesManual()" title="Arquiva todas as transações do mês atual no histórico e limpa a tela para novos lançamentos">
+                <i class="fas fa-lock"></i> Fechar Mês
+            </button>
+        </div>
 
         <!-- TABS -->
         <div class="tabs">
@@ -573,6 +539,7 @@
             <button class="tab-btn pessoal" data-tab="pessoal"><i class="fas fa-user"></i> Pessoal</button>
             <button class="tab-btn uber" data-tab="uber"><i class="fas fa-taxi"></i> Uber</button>
             <button class="tab-btn resumo" data-tab="resumo"><i class="fas fa-chart-simple"></i> Resumo Geral</button>
+            <button class="tab-btn historico" data-tab="historico"><i class="fas fa-history"></i> Histórico</button>
         </div>
 
         <!-- ====== ABA LAVA-JATO ====== -->
@@ -629,8 +596,8 @@
             </form>
 
             <div class="filtros">
-                <input type="date" id="filtro-data-ini-lava" placeholder="Data inicial" />
-                <input type="date" id="filtro-data-fim-lava" placeholder="Data final" />
+                <input type="date" id="filtro-data-ini-lava" />
+                <input type="date" id="filtro-data-fim-lava" />
                 <select id="filtro-categoria-lava">
                     <option value="">Todas categorias</option>
                     <option value="Serviços">Serviços</option>
@@ -715,8 +682,8 @@
             </form>
 
             <div class="filtros">
-                <input type="date" id="filtro-data-ini-pessoal" placeholder="Data inicial" />
-                <input type="date" id="filtro-data-fim-pessoal" placeholder="Data final" />
+                <input type="date" id="filtro-data-ini-pessoal" />
+                <input type="date" id="filtro-data-fim-pessoal" />
                 <select id="filtro-categoria-pessoal">
                     <option value="">Todas categorias</option>
                     <option value="Salário">Salário</option>
@@ -802,8 +769,8 @@
             </form>
 
             <div class="filtros">
-                <input type="date" id="filtro-data-ini-uber" placeholder="Data inicial" />
-                <input type="date" id="filtro-data-fim-uber" placeholder="Data final" />
+                <input type="date" id="filtro-data-ini-uber" />
+                <input type="date" id="filtro-data-fim-uber" />
                 <select id="filtro-categoria-uber">
                     <option value="">Todas categorias</option>
                     <option value="Corridas">Corridas</option>
@@ -836,7 +803,7 @@
         <!-- ====== ABA RESUMO GERAL ====== -->
         <div class="tab-content" id="tab-resumo">
             <div class="resumo-total-geral">
-                <div class="label">Saldo Geral Consolidado</div>
+                <div class="label">Saldo Geral Consolidado — Mês Atual</div>
                 <div class="value" id="saldo-geral-value">R$ 0,00</div>
                 <div style="margin-top:8px; display:flex; gap:24px; justify-content:center; flex-wrap:wrap; font-size:14px;">
                     <span style="color:#2e9b5e;"><i class="fas fa-arrow-up"></i> Entradas: <strong id="total-entradas-geral">R$ 0,00</strong></span>
@@ -847,7 +814,7 @@
             <div class="resumo-grid">
                 <div class="resumo-card">
                     <h3><i class="fas fa-car-wash" style="color:#2a7de1;"></i> Lava-Jato</h3>
-                    <div id="resumo-lava-detalhes">
+                    <div>
                         <div class="resumo-linha"><span class="label">Saldo</span><span class="valor" id="resumo-lava-saldo">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Entradas</span><span class="valor positive" id="resumo-lava-entradas">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Saídas</span><span class="valor negative" id="resumo-lava-saidas">R$ 0,00</span></div>
@@ -855,7 +822,7 @@
                 </div>
                 <div class="resumo-card">
                     <h3><i class="fas fa-user" style="color:#2e9b5e;"></i> Pessoal</h3>
-                    <div id="resumo-pessoal-detalhes">
+                    <div>
                         <div class="resumo-linha"><span class="label">Saldo</span><span class="valor" id="resumo-pessoal-saldo">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Entradas</span><span class="valor positive" id="resumo-pessoal-entradas">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Saídas</span><span class="valor negative" id="resumo-pessoal-saidas">R$ 0,00</span></div>
@@ -863,7 +830,7 @@
                 </div>
                 <div class="resumo-card">
                     <h3><i class="fas fa-taxi" style="color:#e67e22;"></i> Uber</h3>
-                    <div id="resumo-uber-detalhes">
+                    <div>
                         <div class="resumo-linha"><span class="label">Saldo</span><span class="valor" id="resumo-uber-saldo">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Entradas</span><span class="valor positive" id="resumo-uber-entradas">R$ 0,00</span></div>
                         <div class="resumo-linha"><span class="label">Saídas</span><span class="valor negative" id="resumo-uber-saidas">R$ 0,00</span></div>
@@ -874,14 +841,37 @@
                     <div class="grafico-container">
                         <canvas id="grafico-saidas" width="300" height="200"></canvas>
                     </div>
-                    <div style="font-size:12px; color:#6b7a8f; text-align:center; margin-top:6px;">Por origem (saídas)</div>
+                    <div style="font-size:12px; color:#6b7a8f; text-align:center; margin-top:6px;">Por origem (saídas do mês atual)</div>
                 </div>
             </div>
 
             <div style="background:#fafcff; border:1px solid #e6ecf5; border-radius:14px; padding:18px 22px;">
-                <h3 style="font-size:16px; font-weight:600; color:#1a2634; margin-bottom:10px;"><i class="fas fa-clock"></i> Últimas transações</h3>
+                <h3 style="font-size:16px; font-weight:600; color:#1a2634; margin-bottom:10px;"><i class="fas fa-clock"></i> Últimas transações do mês</h3>
                 <div id="ultimas-transacoes" style="max-height:200px; overflow-y:auto;">
                     <div class="empty-msg">Nenhuma transação recente.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== ABA HISTÓRICO ====== -->
+        <div class="tab-content" id="tab-historico">
+            <div class="historico-header">
+                <h2><i class="fas fa-history"></i> Histórico de Meses</h2>
+                <div class="historico-controles">
+                    <label for="seletor-mes-historico">Mês:</label>
+                    <select id="seletor-mes-historico">
+                        <option value="">— Escolha um mês —</option>
+                    </select>
+                    <button class="btn-del-mes" id="btn-excluir-mes" onclick="excluirMesSelecionado()" disabled>
+                        <i class="fas fa-trash-alt"></i> Excluir mês
+                    </button>
+                </div>
+            </div>
+            <div id="historico-conteudo">
+                <div class="empty-msg">
+                    <i class="fas fa-box-archive" style="font-size:32px; opacity:0.4; display:block; margin-bottom:10px;"></i>
+                    Nenhum mês arquivado ainda.<br>
+                    <small style="font-size:13px;">Ao final do mês (ou ao clicar em "Fechar Mês"), os dados são arquivados aqui automaticamente.</small>
                 </div>
             </div>
         </div>
@@ -890,27 +880,92 @@
 
     <script>
         // ============================================================
-        //  BANCO DE DADOS (localStorage)
+        //  CONSTANTES E ESTADO
         // ============================================================
-        const STORAGE_KEY = 'financas_app';
+        const STORAGE_KEY = 'financas_app_v2';
+        const OLD_KEY = 'financas_app';
 
-        function carregarTransacoes() {
+        const NOMES_MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+                             'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+        function mesAtual() {
+            const d = new Date();
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        }
+
+        function nomeMes(mesStr) {
+            if (!mesStr) return '';
+            const [ano, mes] = mesStr.split('-');
+            return `${NOMES_MESES[parseInt(mes) - 1]} de ${ano}`;
+        }
+
+        function estadoInicial() {
+            return { currentMonth: mesAtual(), current: [], history: {} };
+        }
+
+        // Migração do formato antigo (array) para o novo (objeto)
+        function migrarAntigo() {
+            try {
+                const old = localStorage.getItem(OLD_KEY);
+                if (!old) return null;
+                const arr = JSON.parse(old);
+                if (!Array.isArray(arr) || arr.length === 0) {
+                    localStorage.removeItem(OLD_KEY);
+                    return null;
+                }
+                const novo = estadoInicial();
+                arr.forEach(t => {
+                    const mes = t.data ? t.data.slice(0, 7) : novo.currentMonth;
+                    if (mes === novo.currentMonth) {
+                        novo.current.push(t);
+                    } else {
+                        if (!novo.history[mes]) novo.history[mes] = [];
+                        novo.history[mes].push(t);
+                    }
+                });
+                localStorage.removeItem(OLD_KEY);
+                return novo;
+            } catch { return null; }
+        }
+
+        function carregarEstado() {
             try {
                 const data = localStorage.getItem(STORAGE_KEY);
-                return data ? JSON.parse(data) : [];
-            } catch {
-                return [];
+                if (data) return JSON.parse(data);
+            } catch {}
+            const migrado = migrarAntigo();
+            if (migrado) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(migrado));
+                return migrado;
             }
+            return estadoInicial();
         }
 
-        function salvarTransacoes(transacoes) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(transacoes));
-        }
+        let estado = carregarEstado();
+        let mesViradoInfo = null;
 
-        // ============================================================
-        //  ESTADO
-        // ============================================================
-        let transacoes = carregarTransacoes();
+        // Verifica virada de mês no carregamento
+        (function verificarViradaMes() {
+            const atual = mesAtual();
+            if (estado.currentMonth !== atual) {
+                const mesAntigo = estado.currentMonth;
+                if (estado.current && estado.current.length > 0) {
+                    const existente = estado.history[mesAntigo] || [];
+                    estado.history[mesAntigo] = existente.concat(estado.current);
+                }
+                estado.currentMonth = atual;
+                estado.current = [];
+                mesViradoInfo = mesAntigo;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+            }
+        })();
+
+        let transacoes = estado.current;
+
+        function salvarEstado() {
+            estado.current = transacoes;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+        }
 
         // ============================================================
         //  UTILITÁRIOS
@@ -927,12 +982,6 @@
             return new Date().toISOString().slice(0, 10);
         }
 
-        function parseData(str) {
-            if (!str) return null;
-            const [y, m, d] = str.split('-').map(Number);
-            return new Date(y, m - 1, d);
-        }
-
         function filtrarPorData(transacao, dataIni, dataFim) {
             if (!dataIni && !dataFim) return true;
             const d = transacao.data;
@@ -941,69 +990,90 @@
             return true;
         }
 
+        function showToast(msg, tipo = 'info') {
+            const icones = {
+                info: 'fa-circle-info',
+                success: 'fa-circle-check',
+                warning: 'fa-triangle-exclamation',
+                error: 'fa-circle-xmark'
+            };
+            const toast = document.createElement('div');
+            toast.className = 'toast toast-' + tipo;
+            toast.innerHTML = `<i class="fas ${icones[tipo] || icones.info}"></i><span>${msg}</span>`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 350);
+            }, 4500);
+        }
+
         // ============================================================
         //  OPERAÇÕES
         // ============================================================
         function adicionarTransacao(origem, tipo, descricao, valor, data, categoria) {
-            const id = gerarId();
-            const nova = { id, origem, tipo, descricao, valor, data, categoria };
+            const nova = {
+                id: gerarId(), origem, tipo, descricao, valor, data, categoria
+            };
             transacoes.push(nova);
-            salvarTransacoes(transacoes);
+            salvarEstado();
             return nova;
         }
 
         function removerTransacao(id) {
             transacoes = transacoes.filter(t => t.id !== id);
-            salvarTransacoes(transacoes);
+            salvarEstado();
         }
 
         function getTransacoesPorOrigem(origem) {
             return transacoes.filter(t => t.origem === origem);
         }
 
-        function calcularSaldo(origem) {
-            const lista = getTransacoesPorOrigem(origem);
-            let totalEntrada = 0,
-                totalSaida = 0;
-            lista.forEach(t => {
-                if (t.tipo === 'entrada') totalEntrada += t.valor;
-                else totalSaida += t.valor;
+        function calcularSaldo(origem, lista) {
+            const arr = lista || getTransacoesPorOrigem(origem);
+            let ent = 0, sai = 0;
+            arr.forEach(t => {
+                if (t.origem !== origem) return;
+                if (t.tipo === 'entrada') ent += t.valor;
+                else sai += t.valor;
             });
-            return { saldo: totalEntrada - totalSaida, entradas: totalEntrada, saidas: totalSaida };
+            return { saldo: ent - sai, entradas: ent, saidas: sai };
         }
 
-        function calcularSaldoGeral() {
-            const origens = ['lava', 'pessoal', 'uber'];
-            let totalEntrada = 0,
-                totalSaida = 0;
-            origens.forEach(o => {
-                const res = calcularSaldo(o);
-                totalEntrada += res.entradas;
-                totalSaida += res.saidas;
+        function calcularSaldoGeral(lista) {
+            const arr = lista || transacoes;
+            let ent = 0, sai = 0;
+            arr.forEach(t => {
+                if (t.tipo === 'entrada') ent += t.valor;
+                else sai += t.valor;
             });
-            return { saldo: totalEntrada - totalSaida, entradas: totalEntrada, saidas: totalSaida };
+            return { saldo: ent - sai, entradas: ent, saidas: sai };
         }
 
         // ============================================================
-        //  RENDERIZAÇÃO
+        //  RENDERIZAÇÃO PRINCIPAL
         // ============================================================
+        function atualizarMonthLabel() {
+            const el = document.getElementById('current-month-label');
+            if (el) el.textContent = nomeMes(estado.currentMonth);
+        }
+
         function renderizarTudo() {
-            renderizarSaldo('lava');
-            renderizarSaldo('pessoal');
-            renderizarSaldo('uber');
-            renderizarLista('lava');
-            renderizarLista('pessoal');
-            renderizarLista('uber');
+            atualizarMonthLabel();
+            ['lava', 'pessoal', 'uber'].forEach(o => {
+                renderizarSaldo(o);
+                renderizarLista(o);
+            });
             renderizarResumoGeral();
             renderizarUltimasTransacoes();
+            renderizarHistorico();
         }
 
         function renderizarSaldo(origem) {
             const res = calcularSaldo(origem);
-            const prefix = origem;
-            const elSaldo = document.getElementById(`saldo-${prefix}-value`);
-            const elEntradas = document.getElementById(`entradas-${prefix}`);
-            const elSaidas = document.getElementById(`saidas-${prefix}`);
+            const elSaldo = document.getElementById(`saldo-${origem}-value`);
+            const elEntradas = document.getElementById(`entradas-${origem}`);
+            const elSaidas = document.getElementById(`saidas-${origem}`);
             if (elSaldo) {
                 elSaldo.textContent = formatarMoeda(res.saldo);
                 elSaldo.className = 'value ' + (res.saldo >= 0 ? 'positive' : 'negative');
@@ -1021,16 +1091,8 @@
             const catFiltro = document.getElementById(`filtro-categoria-${origem}`)?.value || '';
 
             let lista = getTransacoesPorOrigem(origem);
-
-            // Filtros
-            if (dataIni || dataFim) {
-                lista = lista.filter(t => filtrarPorData(t, dataIni, dataFim));
-            }
-            if (catFiltro) {
-                lista = lista.filter(t => t.categoria === catFiltro);
-            }
-
-            // Ordenar por data (mais recente primeiro)
+            if (dataIni || dataFim) lista = lista.filter(t => filtrarPorData(t, dataIni, dataFim));
+            if (catFiltro) lista = lista.filter(t => t.categoria === catFiltro);
             lista.sort((a, b) => (a.data < b.data ? 1 : -1));
 
             if (lista.length === 0) {
@@ -1041,14 +1103,13 @@
             let html = '';
             lista.forEach(t => {
                 const tipoClass = t.tipo === 'entrada' ? 'entrada' : 'saida';
-                const valorStr = formatarMoeda(t.valor);
                 const sinal = t.tipo === 'entrada' ? '+' : '-';
                 html += `
                     <div class="lista-item">
                         <span>${t.descricao}</span>
                         <span>${t.data}</span>
                         <span><span class="categoria-badge">${t.categoria || '—'}</span></span>
-                        <span><span class="tipo-badge ${tipoClass}">${sinal} ${valorStr}</span></span>
+                        <span><span class="tipo-badge ${tipoClass}">${sinal} ${formatarMoeda(t.valor)}</span></span>
                         <span><button class="btn-del" onclick="excluirTransacao('${t.id}')" title="Excluir"><i class="fas fa-times"></i></button></span>
                     </div>
                 `;
@@ -1060,10 +1121,11 @@
             if (!confirm('Excluir esta transação?')) return;
             removerTransacao(id);
             renderizarTudo();
+            showToast('Transação excluída.', 'success');
         }
 
         // ============================================================
-        //  RESUMO GERAL
+        //  RESUMO GERAL (mês atual)
         // ============================================================
         function renderizarResumoGeral() {
             const origens = ['lava', 'pessoal', 'uber'];
@@ -1071,42 +1133,46 @@
             const cores = { lava: '#2a7de1', pessoal: '#2e9b5e', uber: '#e67e22' };
 
             const geral = calcularSaldoGeral();
-            document.getElementById('saldo-geral-value').textContent = formatarMoeda(geral.saldo);
-            document.getElementById('saldo-geral-value').className = 'value ' + (geral.saldo >= 0 ? 'positive' : 'negative');
-            document.getElementById('total-entradas-geral').textContent = formatarMoeda(geral.entradas);
-            document.getElementById('total-saidas-geral').textContent = formatarMoeda(geral.saidas);
+            const elGeral = document.getElementById('saldo-geral-value');
+            if (elGeral) {
+                elGeral.textContent = formatarMoeda(geral.saldo);
+                elGeral.className = 'value ' + (geral.saldo >= 0 ? 'positive' : 'negative');
+            }
+            const elEnt = document.getElementById('total-entradas-geral');
+            const elSai = document.getElementById('total-saidas-geral');
+            if (elEnt) elEnt.textContent = formatarMoeda(geral.entradas);
+            if (elSai) elSai.textContent = formatarMoeda(geral.saidas);
 
             origens.forEach(o => {
                 const res = calcularSaldo(o);
-                const prefix = o;
-                document.getElementById(`resumo-${prefix}-saldo`).textContent = formatarMoeda(res.saldo);
-                document.getElementById(`resumo-${prefix}-saldo`).className = 'valor ' + (res.saldo >= 0 ? 'positive' :
-                    'negative');
-                document.getElementById(`resumo-${prefix}-entradas`).textContent = formatarMoeda(res.entradas);
-                document.getElementById(`resumo-${prefix}-saidas`).textContent = formatarMoeda(res.saidas);
+                const elS = document.getElementById(`resumo-${o}-saldo`);
+                const elE = document.getElementById(`resumo-${o}-entradas`);
+                const elX = document.getElementById(`resumo-${o}-saidas`);
+                if (elS) {
+                    elS.textContent = formatarMoeda(res.saldo);
+                    elS.className = 'valor ' + (res.saldo >= 0 ? 'positive' : 'negative');
+                }
+                if (elE) elE.textContent = formatarMoeda(res.entradas);
+                if (elX) elX.textContent = formatarMoeda(res.saidas);
             });
 
-            // Gráfico de pizza (saídas por origem)
-            const saidasPorOrigem = origens.map(o => {
+            const dados = origens.map(o => {
                 const res = calcularSaldo(o);
-                return { origem: o, valor: res.saidas, label: labels[o], cor: cores[o] };
+                return { valor: res.saidas, label: labels[o], cor: cores[o] };
             });
-            desenharGraficoPizza(saidasPorOrigem);
+            desenharGraficoPizza(dados);
         }
 
         function desenharGraficoPizza(dados) {
             const canvas = document.getElementById('grafico-saidas');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
-            const w = canvas.width,
-                h = canvas.height;
-            const cx = w / 2,
-                cy = h / 2,
-                raio = Math.min(w, h) / 2 - 10;
+            const w = canvas.width, h = canvas.height;
+            const cx = w / 2, cy = h / 2, raio = Math.min(w, h) / 2 - 25;
 
             ctx.clearRect(0, 0, w, h);
-
             const total = dados.reduce((s, d) => s + d.valor, 0);
+
             if (total === 0) {
                 ctx.fillStyle = '#b0bccd';
                 ctx.font = '14px sans-serif';
@@ -1116,10 +1182,10 @@
             }
 
             let anguloInicio = -Math.PI / 2;
-            dados.forEach((d, i) => {
+            dados.forEach(d => {
+                if (d.valor === 0) return;
                 const fatia = (d.valor / total) * 2 * Math.PI;
                 const anguloFim = anguloInicio + fatia;
-
                 ctx.beginPath();
                 ctx.moveTo(cx, cy);
                 ctx.arc(cx, cy, raio, anguloInicio, anguloFim);
@@ -1130,67 +1196,212 @@
                 ctx.lineWidth = 2;
                 ctx.stroke();
 
-                // Legenda simples dentro da fatia (se for grande)
-                if (fatia > 0.3) {
+                if (fatia > 0.35) {
                     const mid = anguloInicio + fatia / 2;
-                    const tx = cx + (raio * 0.6) * Math.cos(mid);
-                    const ty = cy + (raio * 0.6) * Math.sin(mid);
+                    const tx = cx + (raio * 0.65) * Math.cos(mid);
+                    const ty = cy + (raio * 0.65) * Math.sin(mid);
                     ctx.fillStyle = '#fff';
                     ctx.font = 'bold 11px sans-serif';
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
                     ctx.fillText((d.valor / total * 100).toFixed(0) + '%', tx, ty);
                 }
-
                 anguloInicio = anguloFim;
             });
 
-            // Legenda externa (mini)
-            const legendaY = h - 16;
-            let posX = 10;
+            // Legenda
+            const legendaY = h - 12;
+            let posX = 8;
             ctx.font = '10px sans-serif';
             dados.forEach(d => {
                 if (d.valor === 0) return;
                 ctx.fillStyle = d.cor;
-                ctx.fillRect(posX, legendaY - 6, 12, 12);
+                ctx.fillRect(posX, legendaY - 6, 10, 10);
                 ctx.fillStyle = '#1a2634';
                 ctx.textAlign = 'left';
                 ctx.textBaseline = 'middle';
-                ctx.fillText(`${d.label} (${formatarMoeda(d.valor)})`, posX + 16, legendaY);
-                posX += ctx.measureText(`${d.label} (${formatarMoeda(d.valor)})`).width + 24;
+                const txt = `${d.label} (${formatarMoeda(d.valor)})`;
+                ctx.fillText(txt, posX + 14, legendaY);
+                posX += ctx.measureText(txt).width + 20;
             });
         }
 
         // ============================================================
-        //  ÚLTIMAS TRANSAÇÕES (resumo)
+        //  ÚLTIMAS TRANSAÇÕES (mês atual)
         // ============================================================
         function renderizarUltimasTransacoes() {
             const container = document.getElementById('ultimas-transacoes');
             if (!container) return;
+            const lista = [...transacoes].sort((a, b) => (a.data < b.data ? 1 : -1)).slice(0, 10);
 
-            const lista = [...transacoes];
-            lista.sort((a, b) => (a.data < b.data ? 1 : -1));
-            const ultimas = lista.slice(0, 10);
-
-            if (ultimas.length === 0) {
+            if (lista.length === 0) {
                 container.innerHTML = `<div class="empty-msg">Nenhuma transação recente.</div>`;
                 return;
             }
 
             let html = '';
-            ultimas.forEach(t => {
-                const origemIcon = { lava: '🚗', pessoal: '👤', uber: '🚖' } [t.origem] || '📌';
+            lista.forEach(t => {
+                const icone = { lava: '🚗', pessoal: '👤', uber: '🚖' }[t.origem] || '📌';
                 const sinal = t.tipo === 'entrada' ? '+' : '-';
                 const cor = t.tipo === 'entrada' ? '#2e9b5e' : '#d1453b';
                 html += `
-                    <div style="display:flex; justify-content:space-between; padding:10px 4px; border-bottom:1px solid #f0f2f5; font-size:14px;">
-                        <span>${origemIcon} ${t.descricao} <span style="color:#6b7a8f;font-size:12px;">(${t.categoria || '—'})</span></span>
-                        <span style="color:${cor};font-weight:600;">${sinal} ${formatarMoeda(t.valor)}</span>
-                        <span style="color:#8a9ab0;font-size:12px;">${t.data}</span>
+                    <div style="display:flex; justify-content:space-between; padding:10px 4px; border-bottom:1px solid #f0f2f5; font-size:14px; gap:8px;">
+                        <span style="flex:1;">${icone} ${t.descricao} <span style="color:#6b7a8f;font-size:12px;">(${t.categoria || '—'})</span></span>
+                        <span style="color:${cor};font-weight:600;white-space:nowrap;">${sinal} ${formatarMoeda(t.valor)}</span>
+                        <span style="color:#8a9ab0;font-size:12px;white-space:nowrap;">${t.data}</span>
                     </div>
                 `;
             });
             container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  HISTÓRICO
+        // ============================================================
+        function renderizarHistorico() {
+            const select = document.getElementById('seletor-mes-historico');
+            const btnExcluir = document.getElementById('btn-excluir-mes');
+            if (!select) return;
+
+            const meses = Object.keys(estado.history).sort().reverse();
+            const valorAtual = select.value;
+
+            select.innerHTML = '<option value="">— Escolha um mês —</option>' +
+                meses.map(m => `<option value="${m}">${nomeMes(m)}</option>`).join('');
+
+            if (meses.includes(valorAtual)) {
+                select.value = valorAtual;
+            } else if (meses.length > 0) {
+                select.value = meses[0];
+            }
+
+            const mesSel = select.value;
+            const container = document.getElementById('historico-conteudo');
+
+            if (!mesSel || !estado.history[mesSel]) {
+                if (meses.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-msg">
+                            <i class="fas fa-box-archive" style="font-size:32px; opacity:0.4; display:block; margin-bottom:10px;"></i>
+                            Nenhum mês arquivado ainda.<br>
+                            <small style="font-size:13px;">Ao final do mês (ou ao clicar em "Fechar Mês"), os dados são arquivados aqui automaticamente.</small>
+                        </div>`;
+                } else {
+                    container.innerHTML = `<div class="empty-msg">Selecione um mês para ver os detalhes.</div>`;
+                }
+                if (btnExcluir) btnExcluir.disabled = true;
+                return;
+            }
+
+            if (btnExcluir) btnExcluir.disabled = false;
+
+            const lista = [...estado.history[mesSel]];
+            const lava = calcularSaldo('lava', lista);
+            const pessoal = calcularSaldo('pessoal', lista);
+            const uber = calcularSaldo('uber', lista);
+            const geral = calcularSaldoGeral(lista);
+
+            const cardOrigem = (titulo, icone, cor, res) => `
+                <div class="resumo-card">
+                    <h3><i class="fas ${icone}" style="color:${cor};"></i> ${titulo}</h3>
+                    <div>
+                        <div class="resumo-linha"><span class="label">Saldo</span><span class="valor ${res.saldo >= 0 ? 'positive' : 'negative'}">${formatarMoeda(res.saldo)}</span></div>
+                        <div class="resumo-linha"><span class="label">Entradas</span><span class="valor positive">${formatarMoeda(res.entradas)}</span></div>
+                        <div class="resumo-linha"><span class="label">Saídas</span><span class="valor negative">${formatarMoeda(res.saidas)}</span></div>
+                    </div>
+                </div>`;
+
+            lista.sort((a, b) => (a.data < b.data ? 1 : -1));
+            const linhas = lista.length === 0
+                ? `<div class="empty-msg">Sem transações neste mês.</div>`
+                : lista.map(t => {
+                    const tipoClass = t.tipo === 'entrada' ? 'entrada' : 'saida';
+                    const sinal = t.tipo === 'entrada' ? '+' : '-';
+                    const icone = { lava: '🚗', pessoal: '👤', uber: '🚖' }[t.origem] || '📌';
+                    return `
+                        <div class="lista-item">
+                            <span>${icone} ${t.descricao}</span>
+                            <span>${t.data}</span>
+                            <span><span class="categoria-badge">${t.categoria || '—'}</span></span>
+                            <span><span class="tipo-badge ${tipoClass}">${sinal} ${formatarMoeda(t.valor)}</span></span>
+                            <span></span>
+                        </div>`;
+                }).join('');
+
+            container.innerHTML = `
+                <div class="resumo-total-geral">
+                    <div class="label" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:6px;">
+                        <span class="historico-badge-info"><i class="fas fa-lock"></i> Arquivado</span>
+                        ${nomeMes(mesSel)}
+                    </div>
+                    <div class="value ${geral.saldo >= 0 ? 'positive' : 'negative'}">${formatarMoeda(geral.saldo)}</div>
+                    <div style="margin-top:8px; display:flex; gap:24px; justify-content:center; flex-wrap:wrap; font-size:14px;">
+                        <span style="color:#2e9b5e;"><i class="fas fa-arrow-up"></i> Entradas: <strong>${formatarMoeda(geral.entradas)}</strong></span>
+                        <span style="color:#d1453b;"><i class="fas fa-arrow-down"></i> Saídas: <strong>${formatarMoeda(geral.saidas)}</strong></span>
+                    </div>
+                </div>
+
+                <div class="resumo-grid">
+                    ${cardOrigem('Lava-Jato', 'fa-car-wash', '#2a7de1', lava)}
+                    ${cardOrigem('Pessoal', 'fa-user', '#2e9b5e', pessoal)}
+                    ${cardOrigem('Uber', 'fa-taxi', '#e67e22', uber)}
+                    <div class="resumo-card">
+                        <h3><i class="fas fa-list-ul" style="color:#8e44ad;"></i> Resumo do Mês</h3>
+                        <div>
+                            <div class="resumo-linha"><span class="label">Total de transações</span><span class="valor">${lista.length}</span></div>
+                            <div class="resumo-linha"><span class="label">Média por transação</span><span class="valor">${formatarMoeda(lista.length > 0 ? lista.reduce((s,t)=>s+t.valor,0)/lista.length : 0)}</span></div>
+                            <div class="resumo-linha"><span class="label">Maior valor</span><span class="valor">${formatarMoeda(lista.length > 0 ? Math.max(...lista.map(t=>t.valor)) : 0)}</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista-transacoes">
+                    <div class="lista-header">
+                        <span>Descrição</span>
+                        <span>Data</span>
+                        <span class="categoria-col">Categoria</span>
+                        <span>Valor</span>
+                        <span></span>
+                    </div>
+                    <div class="lista-scroll">${linhas}</div>
+                </div>
+            `;
+        }
+
+        function excluirMesSelecionado() {
+            const select = document.getElementById('seletor-mes-historico');
+            const mes = select.value;
+            if (!mes || !estado.history[mes]) return;
+
+            if (!confirm(`Excluir permanentemente o histórico de ${nomeMes(mes)}?\n\nEsta ação não pode ser desfeita.`)) return;
+
+            delete estado.history[mes];
+            salvarEstado();
+            select.value = '';
+            renderizarHistorico();
+            showToast(`Histórico de ${nomeMes(mes)} excluído.`, 'success');
+        }
+
+        // ============================================================
+        //  FECHAR MÊS (manual)
+        // ============================================================
+        function fecharMesManual() {
+            if (transacoes.length === 0) {
+                showToast('Não há transações para arquivar neste mês.', 'warning');
+                return;
+            }
+
+            const qtd = transacoes.length;
+            if (!confirm(`Arquivar ${qtd} transação(ões) de ${nomeMes(estado.currentMonth)} no histórico?\n\nA tela ficará vazia para novos lançamentos.`)) return;
+
+            const mesAtualStr = estado.currentMonth;
+            const existente = estado.history[mesAtualStr] || [];
+            estado.history[mesAtualStr] = existente.concat(transacoes);
+            estado.current = [];
+            transacoes = estado.current;
+            salvarEstado();
+            renderizarTudo();
+            showToast(`${qtd} transação(ões) arquivada(s) em ${nomeMes(mesAtualStr)}.`, 'success');
         }
 
         // ============================================================
@@ -1211,7 +1422,7 @@
         // ============================================================
         function setupForms() {
             document.querySelectorAll('.form-transacao').forEach(form => {
-                form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', function (e) {
                     e.preventDefault();
                     const origem = this.dataset.origem;
                     const descricao = this.querySelector('input[name="descricao"]').value.trim();
@@ -1221,27 +1432,22 @@
                     const categoria = this.querySelector('select[name="categoria"]').value;
 
                     if (!descricao || isNaN(valor) || valor <= 0 || !data) {
-                        alert('Preencha todos os campos corretamente.');
+                        showToast('Preencha todos os campos corretamente.', 'error');
                         return;
                     }
 
                     adicionarTransacao(origem, tipo, descricao, valor, data, categoria);
                     renderizarTudo();
+                    showToast('Transação adicionada!', 'success');
 
-                    // Reset do formulário (mantém data e tipo)
                     this.querySelector('input[name="descricao"]').value = '';
                     this.querySelector('input[name="valor"]').value = '';
-                    // data e tipo permanecem
                 });
 
-                // Pré-preencher data com hoje
                 const dataInput = form.querySelector('input[name="data"]');
-                if (dataInput && !dataInput.value) {
-                    dataInput.value = hoje();
-                }
+                if (dataInput && !dataInput.value) dataInput.value = hoje();
             });
 
-            // Filtros: escutar mudanças
             ['lava', 'pessoal', 'uber'].forEach(origem => {
                 const ini = document.getElementById(`filtro-data-ini-${origem}`);
                 const fim = document.getElementById(`filtro-data-fim-${origem}`);
@@ -1256,30 +1462,33 @@
         //  TABS
         // ============================================================
         function setupTabs() {
-            const tabs = document.querySelectorAll('.tab-btn');
-            tabs.forEach(btn => {
-                btn.addEventListener('click', function() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
                     const tabId = this.dataset.tab;
-                    // Remove active de todos
                     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
                     this.classList.add('active');
                     const content = document.getElementById(`tab-${tabId}`);
                     if (content) content.classList.add('active');
 
-                    // Se for resumo, redesenha gráfico (pode ter ficado com tamanho errado)
-                    if (tabId === 'resumo') {
-                        renderizarResumoGeral();
-                    }
+                    if (tabId === 'resumo') renderizarResumoGeral();
+                    if (tabId === 'historico') renderizarHistorico();
                 });
             });
+        }
+
+        function setupHistorico() {
+            const select = document.getElementById('seletor-mes-historico');
+            if (select) {
+                select.addEventListener('change', renderizarHistorico);
+            }
         }
 
         // ============================================================
         //  EXPORT / IMPORT / LIMPAR
         // ============================================================
         function exportarDados() {
-            const data = JSON.stringify(transacoes, null, 2);
+            const data = JSON.stringify(estado, null, 2);
             const blob = new Blob([data], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -1287,26 +1496,43 @@
             a.download = `financas_${hoje()}.json`;
             a.click();
             URL.revokeObjectURL(url);
+            showToast('Backup exportado.', 'success');
         }
 
         function importarDados() {
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = '.json';
-            input.onchange = function(e) {
+            input.onchange = function (e) {
                 const file = e.target.files[0];
                 if (!file) return;
                 const reader = new FileReader();
-                reader.onload = function(ev) {
+                reader.onload = function (ev) {
                     try {
                         const dados = JSON.parse(ev.target.result);
-                        if (!Array.isArray(dados)) throw new Error('Formato inválido');
-                        transacoes = dados;
-                        salvarTransacoes(transacoes);
+                        if (Array.isArray(dados)) {
+                            // Formato antigo
+                            const novo = estadoInicial();
+                            dados.forEach(t => {
+                                const mes = t.data ? t.data.slice(0, 7) : novo.currentMonth;
+                                if (mes === novo.currentMonth) novo.current.push(t);
+                                else {
+                                    if (!novo.history[mes]) novo.history[mes] = [];
+                                    novo.history[mes].push(t);
+                                }
+                            });
+                            estado = novo;
+                        } else if (dados && typeof dados === 'object' && 'current' in dados && 'history' in dados) {
+                            estado = dados;
+                        } else {
+                            throw new Error('Formato inválido');
+                        }
+                        transacoes = estado.current;
+                        salvarEstado();
                         renderizarTudo();
-                        alert('Dados importados com sucesso!');
+                        showToast('Dados importados com sucesso!', 'success');
                     } catch (err) {
-                        alert('Erro ao importar: ' + err.message);
+                        showToast('Erro ao importar: ' + err.message, 'error');
                     }
                 };
                 reader.readAsText(file);
@@ -1315,27 +1541,31 @@
         }
 
         function limparTudo() {
-            transacoes = [];
-            salvarTransacoes(transacoes);
+            estado = estadoInicial();
+            transacoes = estado.current;
+            salvarEstado();
             renderizarTudo();
+            showToast('Todos os dados foram apagados.', 'success');
         }
 
         // ============================================================
         //  INICIALIZAÇÃO
         // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             setupTabs();
             setupForms();
+            setupHistorico();
             renderizarTudo();
 
-            // Re-renderizar gráfico ao redimensionar (debounce)
+            if (mesViradoInfo) {
+                showToast(`Bem-vindo a ${nomeMes(estado.currentMonth)}! O mês de ${nomeMes(mesViradoInfo)} foi arquivado no histórico.`, 'info');
+            }
+
             let timeout;
             window.addEventListener('resize', () => {
                 clearTimeout(timeout);
                 timeout = setTimeout(() => {
-                    if (document.getElementById('tab-resumo').classList.contains('active')) {
-                        renderizarResumoGeral();
-                    }
+                    if (document.getElementById('tab-resumo').classList.contains('active')) renderizarResumoGeral();
                 }, 300);
             });
         });
